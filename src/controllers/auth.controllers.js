@@ -20,7 +20,7 @@ async function registerUser(req, res) {
             { userId: user._id,role:user.role }, process.env.JWT_SECRET, { expiresIn: "1h" }
         );
         res.cookie("token", token, { httpOnly: true, secure: true, maxAge: 3600000 });
-        res.status(201).json({ message: "User created successfully", user });
+         return res.status(201).json({ message: "User created successfully", user });
     }
     
     
